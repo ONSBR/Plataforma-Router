@@ -1,3 +1,5 @@
+var config = require('./config');
+
 // Dependencies
 // ===========================================================
 var express = require("express");
@@ -12,33 +14,35 @@ var PORT = 8080;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get("/redirect", function(req, res) {
-  res.redirect(302, '/destination');
+app.get("/process/:idprocess", function(req, res) {
+
+  console.log("___ENTER GET REDIRECT___");
+
+  var instprocess = req.query.instprocess;
+  var dateref = req.query.dateref;
+  var scenario = req.query.cenario;
+
+  var idProcess = req.params.idprocess;
+  var urlProcess = config.processMapUrl[idProcess];
+
+  var queryStringArr = [];
+  if (instprocess) {
+    queryStringArr.push("instprocess=" + instprocess);
+  }
+  if (dateref) {
+    queryStringArr.push("dateref=" + dateref);
+  }
+  if (scenario) {
+    queryStringArr.push("scenario=" + scenario);
+  }
+
+  if (queryStringArr.length > 0) {
+    urlProcess += "?" + queryStringArr.join('&');
+  }
+
+  res.redirect(urlProcess);
 });
 
-app.post("/redirect", function(req, res) {
-  res.redirect(307, '/destination');
-});
-
-app.get("/destination", function(req, res) {
-  console.log("___ENTER GET /destination___");
-
-  res.send("Destination page.");
-});
-
-app.post("/destination", function(req, res) {
-  console.log("___ENTER POST /destination___");
-
-  var reqPayload = req.body;
-  console.log("Received reqPayload = " + JSON.stringify(reqPayload, null, 4));
-
-  // Add some additional fields to the response payload
-  var resPayload = reqPayload;
-  reqPayload.name = "Anya";
-  reqPayload.type = "awesome";
-
-  res.json(resPayload);
-});
 
 // Listener
 // ===========================================================
