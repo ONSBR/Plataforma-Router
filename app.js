@@ -1,6 +1,6 @@
 var config = require('./config');
-var CoreRepository = require('../Plataforma-SDK/services/CoreRepository');
-var CoreStorage = require("../Plataforma-SDK/services/CoreStorage");
+var CoreRepository = require('plataforma-sdk/services/CoreRepository');
+var CoreStorage = require("plataforma-sdk/services/CoreStorage");
 
 // Dependencies
 // ===========================================================
