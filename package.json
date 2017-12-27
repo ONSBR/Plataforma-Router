@@ -11,6 +11,6 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "plataforma-sdk": "file:../plataforma-sdk"
+    "plataforma-sdk": "git+https://github.com/ONSBR/Plataforma-SDK"
   }
 }
