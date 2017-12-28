@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "router manager",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ONSBR/Plataforma-Router.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,10 +15,6 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-<<<<<<< HEAD
     "plataforma-sdk": "git+https://github.com/ONSBR/Plataforma-SDK"
-=======
-    "plataforma-sdk": "file:../Plataforma-SDK"
->>>>>>> 9280fd0320b6a04f1b34c45566a620becb41589e
   }
 }
