@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "router manager",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ONSBR/Plataforma-Router.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "plataforma-sdk": "git+https://github.com/ONSBR/Plataforma-SDK"
   }
 }
